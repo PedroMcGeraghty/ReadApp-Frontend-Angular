@@ -1,0 +1,177 @@
+/* Fondo del formulario y layout general */
+main {
+    background-image: url('https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    /* background-image: url('https://img.freepik.com/fotos-premium/estanterias-libros-fondo-pantalla-hd-imagen-fotografica_993236-8465.jpg?w=1380'); */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    flex-wrap: nowrap;
+}
+
+/* Estilos para el formulario de login */
+.form__container {
+    width: 40rem;
+    min-width: 20rem;
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
+    background: linear-gradient(to bottom, var(--color-searchbar), var(--color-header));
+    border-radius: 2rem;
+    gap: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Borde animado del formulario */
+.form__container::before {
+    content: "";
+    position: absolute;
+    inset: -10rem;
+    background-image: conic-gradient(var(--color-header) 20deg, transparent 60deg);
+    animation: rotate 8s linear infinite;
+    z-index: -1;
+}
+
+/* Fondo del formulario (hereda el fondo del contenedor) */
+.form__container::after {
+    content: "";
+    position: absolute;
+    inset: 1.5rem;
+    background: inherit;
+    z-index: -1;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.form__inputs {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+/* Campo del formulario */
+.campo {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Etiqueta del campo */
+label {
+    font-size: var(--text-xs);
+    font-weight: normal;
+    padding: 0.15rem;
+    text-transform: uppercase;
+    pointer-events: none;
+    transition: 0.25s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: absolute;
+    left: 1rem;
+    top: 28%;
+}
+
+label:after {
+    content: " *";
+    color: var(--color-cancel);
+}
+
+/* Input */
+input {
+    height: 4rem;
+    padding: 1rem;
+    width: 100%;
+    border: 1px solid var(--color-fondo);
+    border-radius: 1rem;
+    box-sizing: border-box;
+    font-size: var(--text-md);
+    outline: none;
+    transition: border-color 0.25s, border-radius 0.25s;
+}
+
+input:focus {
+    border-color: var(--color-searchbar);
+}
+
+/* Estilos dinámicos al enfocar o si el input es válido */
+.campo input:focus~label,
+.campo input:valid~label {
+    transform: translateY(-2rem);
+    font-size: 1em;
+    background-color: var(--color-searchbar);
+    border: 1px solid var(--color-searchbar);
+    border-radius: 1rem;
+    filter: brightness(110%);
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.input__required {
+    color: red;
+}
+
+
+button {
+    height: 4.5rem;
+    padding: 0 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    border: none;
+    background: none;
+    transition: filter 0.25s, opacity 0.25s, color 0.25s;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-sm);
+
+    & img {
+        min-width: 2rem;
+        max-width: 3rem;
+        filter: invert();
+    }
+
+    & p {
+        font-size: var(--text-md);
+        color: white;
+    }
+}
+
+button.valid:hover{
+    filter: brightness(120%);
+    opacity: 0.8;
+
+    & p{
+        filter: invert();
+        font-weight: bold;
+    }
+
+    & img{
+        filter: none;
+    }
+}
+
+button.invalid {
+    filter: brightness(80%);
+    opacity: 0.5;
+}

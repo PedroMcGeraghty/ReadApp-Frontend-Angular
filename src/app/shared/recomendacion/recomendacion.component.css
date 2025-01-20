@@ -1,0 +1,137 @@
+
+.recomendacion {
+    width: 30rem;
+    height: 35rem;
+
+    /* USAR PIPE PARA MOSTRAR UNA CANTIDAD MAXIMA DE CARACTERES Y LUEGO MOSTRAR PUNTOS SUSPENSIVOS. */
+    display: grid;
+    grid-template-areas:
+            "title      title   actions"
+            "comment    comment comment"
+            "books      books   books"
+            "info       info    info"
+            "button     button  button";
+    grid-template-rows: 0.5fr 1fr 0.8fr 0.5fr 0.5fr;
+    row-gap: var(--space-xs);
+    padding: var(--space-md);
+    
+    background: linear-gradient(to bottom, var(--color-reco-gradient), var(--color-reco-gradient-dark));
+    border-radius: 1rem;
+    border: 1px solid grey;
+    
+    transition: all 0.3s ease;
+    
+    &:hover {
+        box-shadow: var(--shadow-elevation-high);
+        transform: scale(1.03);
+         }
+}
+
+.recomendacion__titulo {
+    grid-area: title;
+    display: flex;
+    align-items: center;
+    font-size: large;
+    border-bottom: 1px solid grey;
+}
+
+.actions {
+    grid-area: actions;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    gap: var(--space-md);
+    border-bottom: 1px solid grey;
+
+    & button {
+        cursor: pointer;
+        height: 3.5rem;
+        width: 3.5rem;
+        border-radius: 50%;
+        border: none;
+        box-shadow: 2px 2px 2px rgb(110, 107, 107); 
+
+        & img{
+            height: 2.5rem;
+            width: 2.5rem;
+        }
+
+        &:hover{
+        filter: brightness(140%);}
+    }
+        
+}
+
+.recomendacion__descripcion {
+    grid-area: comment;
+    font-size: small;
+    line-height: 1.5;
+    overflow: hidden;
+}
+
+.recomendacion__libros {
+    grid-area: books;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    overflow: hidden;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+
+.libro-recomendado {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-xs)/2;
+        & img {
+            height: 2rem;
+            width: 2rem;
+        }
+}
+
+.recomendacion__datos {
+    grid-area: info;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.datoIcons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    justify-content: center;
+    align-items: center;
+}
+
+.btn__verMas {
+    grid-area: button;
+    width: 100%;
+    text-align: center;
+    place-self: center;
+    padding: var(--space-xs);
+
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    border-radius: 5px;
+    font-size: var(--text-md);
+    background: #80ed99;
+}
+
+.edit{
+    background: linear-gradient(to bottom, var(--color-edit-gradient), var(--color-edit-gradient-dark));
+}
+
+.value{
+    background: linear-gradient(to bottom, var(--color-value-gradient), var(--color-value-gradient-dark));
+}
+
+.delete{
+    background: linear-gradient(to bottom, var(--color-cancel-gradient), var(--color-cancel));
+}

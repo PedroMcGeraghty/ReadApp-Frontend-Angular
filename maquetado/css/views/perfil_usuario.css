@@ -1,0 +1,40 @@
+/* Este archivo se lee en orden de la siguiente manera: */
+    /* 1 - DIMENSIONES CONTENEDOR   */
+    /* 2 - POSICIONAMIENTO          */
+    /* 3 - DISTRIBUCION ELEMENTOS   */
+    /* 4 - ESTILOS                  */
+
+.perfil-usuario{
+    /* header y botones-container mismo height, por eso el *2*/
+    height: calc(100vh - var(--height-header)*2);
+    width: 100%;
+    
+    padding-bottom: 0;
+
+    overflow-y: auto;
+}
+
+.foto{
+    width: 12rem;
+    height: 12rem;
+}
+
+.nombre{
+    text-align: center;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .perfil-usuario{
+        height: auto;
+        display: flex;
+        
+       
+        flex-direction: column;
+    }
+}
+
+
+
+

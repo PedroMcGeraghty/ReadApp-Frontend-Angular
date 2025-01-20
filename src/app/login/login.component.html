@@ -1,0 +1,63 @@
+<main>
+
+    <div class="form__container">
+
+        <app-encabezado></app-encabezado>
+
+        <!-- ------------------------   -->
+        <!-- Log in Form                -->
+        <!-- ------------------------   -->
+        <form [formGroup]="form" *ngIf="showFormLogin()" class="form__inputs">
+
+            <div class="campo">
+                <input type="text" id={{formLabels.username}} name={{formLabels.username}} formControlName={{formLabels.username}}>
+                <label for={{formLabels.username}}>Username</label>
+                <div class="input__required" *ngIf="warning(formLabels.username)">
+                    <span *ngIf="this.form.controls[formLabels.username].errors?.['required']">* Required</span>
+                    <span *ngIf="this.form.controls[formLabels.username].errors?.['maxlength']">* Max {{this.formRestrictions.USERNAME_MAX}} characters</span>
+                </div>
+            </div>
+
+            <div class="campo">
+                <input type="password" id={{formLabels.password}}  name={{formLabels.password}} formControlName={{formLabels.password}} >
+                <label for={{formLabels.password}}  >Password</label>
+                <div class="input__required" *ngIf="warning(formLabels.password)">
+                    <span *ngIf="this.form.controls[formLabels.password].errors?.['required']">* Required</span>
+                    <span *ngIf="this.form.controls[formLabels.password].errors?.['maxlength']">* Max {{this.formRestrictions.PASSWORD_MAX}} characters</span>
+                </div>
+            </div>
+            <div class="actions">
+
+                <button (click)="request()" [disabled]="!this.form.valid" [attr.data-testid]="'login'" [ngClass]="{'valid': form.valid, 'invalid': !form.valid}" [appBgColor]="'--color-complementary-3-bright'" [colorByVariableName]=true>
+                    <img src="svg/sign-in.svg" alt="">
+                    <p>Login</p>
+                </button>
+
+                <button class="valid" (click)="changeToCreateAccount()" [appBgColor]="'--color-complementary-1-bright'" [colorByVariableName]=true>
+                    <img src="svg/user-circle.svg" alt="">
+                    <p>New account</p>
+                </button>
+
+                <button class="valid" (click)="changeToPasswordRecovery()" [appBgColor]="'--color-complementary-2-bright'" [colorByVariableName]=true>
+                    <img src="svg/key.svg" alt="">
+                    <p>Password Recovery</p>
+                </button>
+              
+            </div>
+        
+        </form>
+
+        <app-new-account-form *ngIf="showFormCreateAccount()">
+        </app-new-account-form>
+
+        <app-password-recovery-form *ngIf="showFormPasswordRecovery()">
+        </app-password-recovery-form>
+
+        <button class="valid" (click)="changeToLogin()" [appBgColor]="'--color-complementary-2-bright'" [colorByVariableName]=true *ngIf="!showFormLogin()">
+            <img src="svg/key-return.svg" alt="" role="img">
+            <p>Back to login</p>
+        </button>
+
+        
+    </div>
+</main>

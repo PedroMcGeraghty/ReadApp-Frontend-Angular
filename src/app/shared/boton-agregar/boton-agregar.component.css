@@ -1,0 +1,14 @@
+button {
+    height: 5rem;
+    width: 7rem;
+    border-radius: 10rem;
+    cursor: pointer;
+    border: none;
+    background: linear-gradient(to bottom, var(--color-searchbar), var(--color-header));
+    filter: drop-shadow(0 0 0.75rem rgb(176, 175, 175));
+    transition: filter 0.3s ease;
+
+    &:hover {
+        filter: brightness(100%);
+    }
+}

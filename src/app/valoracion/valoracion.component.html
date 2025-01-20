@@ -1,0 +1,61 @@
+<div class="valoraciones">
+  <div class="puntuacion">
+    <h2>Valorations</h2>
+      
+    <img class="estrella-dorada" src="svg/recommendationScore.svg">
+    <h3>{{score}}/5</h3>
+  </div>
+
+  <section class="valoraciones__individuales">  
+    <div>
+      @for (valoracion of valoraciones; track valoracion){
+        <app-valoracion-individual [valoracion]="valoracion"></app-valoracion-individual>
+        }
+    </div>
+      
+      <button *ngIf="puedeValorar" class="agregar" (click)="agregaValoracion()">
+        <h2>Rate</h2>
+      </button>
+  </section>
+    
+  <div class="nuevaValoracion" *ngIf="agregarValoracion">
+    <div class="contenedor">
+      <h2>Rate the recommendation</h2>
+        
+      <div>
+        <svg (click)="setRating(1)" [ngClass]="{'rated': rating >= 1}" class="estrellas" viewBox="0 0 256 256">
+          <rect width="256" height="256" fill="none"/>
+          <path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z" fill="currentColor"/>
+        </svg>
+        <svg (click)="setRating(2)" [ngClass]="{'rated': rating >= 2}" class="estrellas" viewBox="0 0 256 256">
+          <rect width="256" height="256" fill="none"/>
+          <path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z" fill="currentColor"/>
+        </svg>
+        <svg (click)="setRating(3)" [ngClass]="{'rated': rating >= 3}" class="estrellas" viewBox="0 0 256 256">
+          <rect width="256" height="256" fill="none"/>
+          <path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z" fill="currentColor"/>
+        </svg>
+        <svg (click)="setRating(4)" [ngClass]="{'rated': rating >= 4}" class="estrellas" viewBox="0 0 256 256">
+          <rect width="256" height="256" fill="none"/>
+          <path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z" fill="currentColor"/>
+        </svg>
+        <svg (click)="setRating(5)" [ngClass]="{'rated': rating >= 5}" class="estrellas" viewBox="0 0 256 256">
+          <rect width="256" height="256" fill="none"/>
+          <path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z" fill="currentColor"/>
+        </svg>
+      </div>
+
+    </div>
+
+    <textarea class="descripcion" type="text"
+        [(ngModel)]="nuevaValoracion.comentario">
+    </textarea>
+
+    <app-btn-guardar-cancelar 
+      (guardar)="agregarLaValoracion()" 
+      (cancelar)="cancelar()">
+    </app-btn-guardar-cancelar>
+
+  </div>
+
+ 

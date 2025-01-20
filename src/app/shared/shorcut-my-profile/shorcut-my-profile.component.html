@@ -1,0 +1,27 @@
+<div class="user__profile-shortcut" (click)="changeDisplay()">
+
+    <div class="user__identification">
+    
+        <img src={{user.fotoPath}} alt="">
+    
+        <div class="flex-column gap-xs">
+            <h4>{{UserService.nombreUsuario}}</h4>
+            <h4>{{'@' + UserService.username}}</h4>  
+        </div>
+    
+    </div>
+
+    <img class="burguer" src="svg/burguer.svg" alt="">
+    
+    <div class="dropdown__menu" *ngIf="displayShorcut">
+        @for (option of options; track option) {
+            <div class="option__container" (click)="goTo(option.path)" appHoverBoxshadow [appBgColor]="'--color-header'" [colorByVariableName]=true>
+
+                <img src="svg/{{option.iconPath}}" alt="">
+                
+                <h4 [style.color]="option.textColor">{{option.label}}</h4>
+
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<section class = "opcionSeleccionada__libros">
+    <h2>Your books {{tipoContenido}}!!</h2>
+    <section class="librosContainer">
+      @for (book of books; track book) {
+        <app-libro [book]="book" (enviarLibro)="sacalodelaVista($event)"></app-libro>
+      }
+    </section>
+    <section class = "buttonsFooter">
+      <app-boton-agregar [view]="'my-profile/add-books'" [tipo]="tipoContenido"></app-boton-agregar>
+      <app-btn-guardar-cancelar (guardar)="eliminarLibros()" (cancelar)="volverHome()"></app-btn-guardar-cancelar>
+    </section>
+</section>

@@ -1,0 +1,27 @@
+/* LAYOUR LIBROS */
+.busquedaLibros{
+
+    /* UNICO */
+    grid-template-columns: repeat(auto-fill,minmax(min(100%, 30rem),0.6fr));
+    grid-auto-rows: minmax(auto, 20rem);
+    
+    /* COMPARTIDO CON LAYOUT CARDS */
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    gap: 2rem;
+    margin: 3rem auto 8rem;
+}
+
+.busquedaLibross{
+    display: grid;
+    gap: 2rem;
+    width: 70%;
+    margin: 3rem auto 8rem;
+    justify-items: center;
+    align-items: center;
+
+    /* UNICO DE LAYOUT CARDS */
+    grid-template-columns: repeat(auto-fit,minmax(min(32rem, 60rem),0.6fr));
+
+}

@@ -1,0 +1,30 @@
+article{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: var(--space-md);
+}
+
+.perfil-valoracion {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: auto;
+    justify-content: center;
+    padding: 1rem;
+    gap: 1rem;
+    & img{
+        place-self: center;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+    }
+}
+
+.descripcion{
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+.datos{
+    width: 100%;
+}

@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap'); /* Consultar si importarla o linkearla*/
+@import 'ngx-toastr/toastr';
+/* Typography | Global */
+:root {
+    /* //////////////////////////////////////////////////// */
+    /* FONT SIZE BASE */
+    /* //////////////////////////////////////////////////// */
+    --text-base-size: 10px;
+
+    /* //////////////////////////////////////////////////// */
+    /* ESCALA GENERAL, PARA AFECTAR A TODOS */
+    /* //////////////////////////////////////////////////// */
+    --ratio-general: 1;
+
+    /* //////////////////////////////////////////////////// */
+    /*  ESCALA ESPECIFICA DE CADA TAMANIO(XXL, XL, LG, ETC)*/
+    /* //////////////////////////////////////////////////// */
+    --ratio-xxl: 3.5;
+    --text-xxl: calc(
+        var(--text-base-size)*var(--ratio-general)*var(--ratio-xxl)
+    );
+    --ratio-xl: 2.5;
+    --text-xl: calc(
+        var(--text-base-size)*var(--ratio-general)*var(--ratio-xl)
+    );
+    --ratio-lg: 2.1;
+    --text-lg: calc(
+        var(--text-base-size)*var(--ratio-general)*var(--ratio-lg)
+    );
+    --ratio-md: 1.8;
+    --text-md: calc(
+        var(--text-base-size)*var(--ratio-general)*var(--ratio-md)
+    );
+    --ratio-sm: 1.5;
+    --text-md: calc(
+        var(--text-base-size)*var(--ratio-general)*var(--ratio-sm)
+    );
+    --ratio-xs: 1.3;
+    --text-xs: calc(
+        var(--text-base-size)*var(--ratio-general)*var(--ratio-xs)
+    );
+    --ratio-xxs: 1;
+    --text-xxs: calc(
+        var(--text-base-size)*var(--ratio-general)*var(--ratio-xxs)
+    );
+
+    /* //////////////////////////////////////////////////// */
+    /* COLORES VIEJOS */
+    /* //////////////////////////////////////////////////// */
+    --fuente-default: "Ubuntu", sans-serif;
+    --color-header: #ff8a65;
+    --color-searchbar: #ffab91;
+    --color-fondo: #edebdd;
+    --color-cards: #e7e5e2da;
+    --color-blanco: #ffffff;
+    --border-default: solid;
+    --border-width: 1px;
+    --color-celeste-claro: #b1e7e1;
+    --color-celeste-oscuro: #50a8b8;
+    --color-card-libro: #78a4b3;
+    --color-card-libro-gradiente: #5d8999;
+    --color-hover-amigos: hsl(16, 85%, 80%);
+    --color-hover-acciones: 0 0 0.75rem rgb(0, 0, 0);
+
+    --shadow-color: 0deg 0% 50%; /* Gris neutral */
+    --shadow-elevation-high: 
+    0.2px 0.2px 0.3px hsl(var(--shadow-color) / 0.45),
+    0.8px 0.8px 1.2px -0.2px hsl(var(--shadow-color) / 0.42),
+    1.6px 1.6px 2.4px -0.5px hsl(var(--shadow-color) / 0.39),
+    2.5px 2.5px 3.8px -0.8px hsl(var(--shadow-color) / 0.36),
+    4px 4px 6px -1.2px hsl(var(--shadow-color) / 0.33),
+    6px 6px 9px -1.6px hsl(var(--shadow-color) / 0.30),
+    9px 9px 13.5px -2px hsl(var(--shadow-color) / 0.28),
+    13px 13px 19.5px -2.5px hsl(var(--shadow-color) / 0.25);
+
+    --perfilUsuario-default: 4rem;
+    --books-default: 1.5rem;
+    --height-header: 7rem;
+    --color-save: rgb(120, 178, 104);
+    --color-save-gradient: rgb(97, 134, 87);
+    --color-save-gradient-dark: rgb(45, 89, 33);
+    --color-value-gradient: rgb(171, 134, 212);
+    --color-value-gradient-dark: rgb(86, 35, 168);
+    --color-edit-gradient: rgb(64, 193, 212);
+    --color-edit-gradient-dark: rgb(25, 113, 236);
+    --color-cancel-gradient: rgb(248, 138, 138);
+    --color-cancel: rgb(165, 41, 41);
+    --color-reco-gradient: #dbd9cc;
+    --color-reco-gradient-dark: #e7e5e2da;
+    --borde-default: 1rem;
+
+    /* //////////////////////////////////////////////////// */
+    /* COLORES ADRIAN */
+    /* //////////////////////////////////////////////////// */
+    --color-primary-bright: #ff8a65 ;
+    --color-primary-mate: #ffab91;
+
+    --color-complementary-1-bright:  #5499c7  ;
+    --color-complementary-1-mate: #a9cce3;
+
+    --color-complementary-2-bright: #af7ac5  ;
+    --color-complementary-2-mate:  #d7bde2  ;
+
+    --color-complementary-3-bright: #52be80    ;
+    --color-complementary-3-mate:  #a9dfbf   ;
+
+    /* //////////////////////////////////////////////////// */
+    /* VARIABLES PARA CLASES DE UTILIDAD(PADDINGS, MARGINS, GAPS, ETC) */
+    /* //////////////////////////////////////////////////// */
+    --space-unit: 1em;
+    --space-xs: calc(0.5 * var(--space-unit));
+    --space-sm: calc(0.75 * var(--space-unit));
+    --space-md: calc(1.25 * var(--space-unit));
+    --space-lg: calc(2 * var(--space-unit));
+    --space-xl: calc(3.25 * var(--space-unit));
+
+    /* //////////////////////////////////////////////////// */
+    /* VARIABLES PARA IMAGENES*/
+    /* //////////////////////////////////////////////////// */
+    --image-small: 5rem;/* Se podria comentar */
+}
+
+h1,
+.text-xxl {
+    font-size: var(--text-xxl, 2.074em);
+}
+
+h2,
+.text-xl {
+    font-size: var(--text-xl, 1.728em);
+}
+
+h3,
+.text-lg {
+    font-size: var(--text-lg, 1.44em);
+}
+
+h4,
+.text-md {
+    font-size: var(--text-md, 1.2em);
+}
+
+p,
+.text-base {
+    font-size: var(--text-base-size);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: var(--text-base-size);
+}
+
+
+body {
+    font-size: var(--text-base-size);
+    background: var(--color-fondo);
+    font-family: var(--fuente-default);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+hr{
+    height: 0;
+}
+
+.toast-message {
+    font-size: 1.5rem; /* Cambiar el tamaño de la fuente del mensaje */
+  }
+
+  .toast-title{
+    font-size: 2rem;
+  }

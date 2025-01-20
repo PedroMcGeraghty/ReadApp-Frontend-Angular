@@ -1,0 +1,66 @@
+.amigo{
+    display: grid;
+    padding: 0.5rem;
+    gap: 0.5rem;
+    grid-template-columns: 0.25fr 1fr 0.5fr;
+    border-radius:0.7rem;
+    border: solid 1px var(--color-header) ;
+    background-color: var(--color-hover-amigos);
+    transition: 0.25s;
+    &:hover{
+        box-shadow: var(--shadow-elevation-high);
+    }
+
+    
+    & img{
+        grid-row: 1/3;
+        width: var(--image-small);
+        height: var(--image-small);
+        border: solid 2px;
+        border-radius: 50%;
+        border-color: var(--color-header);
+        grid-column: 1/2;
+    }
+    
+    & .amigo__nombre{
+        font-size: 1.5rem;
+        font-weight: bold;
+        align-content: end;
+        width: fit-content;
+    }
+
+    & button{
+        height: 3.5rem;
+        width: 3.5rem;
+        border-radius: 50%;
+        grid-row: 1/3;
+        grid-column: -1/-2;
+        cursor: pointer;
+        align-self: center;
+        justify-self: center;
+        border: none;
+        box-shadow: 2px 2px 2px rgb(110, 107, 107); 
+
+        & svg{
+                align-self: center;
+                justify-self: center;
+                height: 2.5rem;
+                width: 2.5rem;
+            }
+
+        &:hover{
+            filter: brightness(140%);}
+    
+    
+    }
+
+}
+
+.custom-delete{
+    background: linear-gradient(to bottom, var(--color-cancel-gradient), var(--color-cancel));
+}
+
+.custom-agregar{
+    background: linear-gradient(to bottom, var(--color-save-gradient), var(--color-save-gradient-dark));
+}
+

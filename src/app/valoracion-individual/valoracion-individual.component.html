@@ -1,0 +1,13 @@
+  <article >
+    <div class="perfil-valoracion">
+      <img src={{valoracion.photoPath}} alt="" />
+      <div class="datos">
+        <h4>{{valoracion.autor}}</h4>
+        <h4>{{valoracion.valor}}</h4>
+        <h4>{{valoracion.fecha | date:'d/M/yyyy'}}</h4>
+      </div>
+    </div>
+    <p class="descripcion ">
+      {{valoracion.comentario}}
+    </p>
+  </article>

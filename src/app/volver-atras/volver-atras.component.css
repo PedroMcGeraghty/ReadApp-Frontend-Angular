@@ -1,0 +1,22 @@
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem;
+}
+
+button{
+    background-color: var(--color-searchbar);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 24px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    font-weight: bold;
+    color: #ffffff;
+}
+

@@ -1,0 +1,69 @@
+/* ////////////////////////////////// */
+/* USO DE campo  */
+/* 
+<div class="campo campo__aclaracion campo--obligatorio">
+            SE NECESITA SI O SI
+            <input>
+            <label></label> 
+
+            OPCIONAL segun selector de bloque o de estado
+            Selector de bloque <campo__bloque>
+            Selector de estado <campo--obligatorio>
+            <div class="aclaracion"></div>
+            <div class="ocultar revelar" onclick="myFunction()"></div>
+        </div>
+*/
+.campo {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    & label{
+        font-size: var(--text-md);
+        font-weight: bold;
+        padding: 0.15rem;
+    }
+
+    & input {
+        height: 4rem;
+        padding: 1rem;
+        width: 100%;
+        border: 1px solid grey;
+        border-radius: 0.5rem;
+        box-sizing: border-box;
+        font-size: var(--text-md);
+        padding: 1rem;
+        outline: none;
+        
+        &:focus{
+            border: 1px solid red;
+        }
+    }
+}
+
+.campo__aclaracion{
+    & .aclaracion{
+        color: var(--color-cancel);
+        display: flex;
+
+        font-size: var(--text-xs);
+        font-weight: bold;
+    }
+    & .aclaracion svg{
+        fill: var(--color-cancel);
+    }
+}
+.campo--obligatorio{
+    & label:after { content:" *"; color:var(--color-cancel);}
+}
+
+.campo--privado{
+    & .ocultar, .revelar svg{
+        position: absolute;
+        right: 1rem;
+        bottom: 0.2rem;
+        cursor: pointer;
+        fill:var(--color-cancel);
+    }
+}

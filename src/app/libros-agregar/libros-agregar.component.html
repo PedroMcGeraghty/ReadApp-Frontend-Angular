@@ -1,0 +1,12 @@
+<section class = "opcionSeleccionada__librosAgregar">
+    <h2>Add the book that interests you!</h2>
+    <section class="librosContainer">
+      <ng-container *ngFor="let book of books">
+        <app-libro [book]="book" (enviarLibro)="sacalodelaVista($event)"></app-libro>
+      </ng-container>
+    </section>
+    <app-btn-guardar-cancelar class = "buttonsFooter"
+    (guardar)="agregarLibros()"
+    (cancelar)="volverHome()"></app-btn-guardar-cancelar>
+</section>
+

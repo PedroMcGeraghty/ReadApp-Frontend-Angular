@@ -1,0 +1,60 @@
+.miPerfil {
+    /* UNICAMENTE PARA DROPDOWN */
+    height: 100%;
+    position: relative;
+    
+    & .miPerfil--ir{
+        margin-right: 2rem;
+        color: var(--color-blanco);
+
+        & .hamburguesita--tabletMobile{
+            display: none;
+            width: var(--text-xxl);
+        }
+    } 
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .miPerfil {
+        justify-content: center;
+        width: 10rem;
+        & .miPerfil--ir{
+            justify-content: center;
+            & img{
+                display: none;
+            }
+            
+            & h4{
+                display: none;
+            }
+            
+            & .hamburguesita--tabletMobile{
+                display: flex;
+            }
+        } 
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .miPerfil {
+        & .miPerfil--ir{
+  
+            & img{
+                display: none;
+            }
+            
+            & h4{
+                display: none;
+            }
+
+            & .hamburguesita--tabletMobile{
+                display: flex;
+            }
+        } 
+    }
+}

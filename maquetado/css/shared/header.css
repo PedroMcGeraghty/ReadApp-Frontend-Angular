@@ -1,0 +1,19 @@
+header {
+    background: linear-gradient(to bottom, var(--color-searchbar),var(--color-header));
+    width: 100vw;
+
+    height: var(--height-header);
+
+    justify-content: space-between;
+
+    z-index: 1;
+}
+
+
+@media screen and (max-width: 400px) {
+    header{
+        position: fixed;
+        bottom: 0vh;   
+    }
+}
+

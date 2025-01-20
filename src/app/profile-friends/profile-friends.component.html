@@ -1,0 +1,17 @@
+<section class = "opcionSeleccionada__amigos">
+    <h2 *ngIf="agregarAmigosNuevos(); else nuevos">Friends</h2>
+    <ng-template #nuevos><h2>Suggested friends</h2></ng-template>
+    
+    <h4 *ngIf="agregarAmigosNuevos() && listIsEmpty()">You haven't got friends yet. Push + button to see suggestions.</h4>
+    <h4 *ngIf="!agregarAmigosNuevos() && listIsEmpty()">Congratulations! All the users are your friends</h4>
+
+    <section class = "friendsList">
+       @for (friend of friends; track friend){
+            <app-amigos [userFriend]="friend" (enviarAmigo)="ocultar($event)"></app-amigos>
+        }  
+    </section>
+    <section class = "buttonsFooter">
+            <app-boton-agregar *ngIf="agregarAmigosNuevos()" [view]="'my-profile'" [tipo]="'new-friends'" data-testid="button-agregar"></app-boton-agregar>
+            <app-btn-guardar-cancelar (guardar)="actualizarAmigos()" (cancelar)="volverHome()"></app-btn-guardar-cancelar >
+    </section>
+</section>

@@ -1,0 +1,4 @@
+<label [ngClass]="{'checkbox-input': inputType === 'checkbox', 'radiobox-input': inputType === 'radio'}">
+    <input [type]="inputType" [name]="name" [checked]="isChecked"/>
+    <h4 class="normal-font">{{label}}</h4>
+</label>

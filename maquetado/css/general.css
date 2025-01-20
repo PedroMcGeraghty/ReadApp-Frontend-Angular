@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+/* Consultar si importarla o linkearla*/
+/* Typography | Global */
+:root {
+    /* //////////////////////////////////////////////////// */
+    /* FONT SIZE BASE */
+    /* //////////////////////////////////////////////////// */
+    --text-base-size: 10px;
+
+    /* //////////////////////////////////////////////////// */
+    /* ESCALA GENERAL, PARA AFECTAR A TODOS */
+    /* //////////////////////////////////////////////////// */
+    --ratio-general: 1;
+
+    /* //////////////////////////////////////////////////// */
+    /*  ESCALA ESPECIFICA DE CADA TAMANIO(XXL, XL, LG, ETC)*/
+    /* //////////////////////////////////////////////////// */
+    --ratio-xxl: 3.5;
+    --text-xxl: calc(var(--text-base-size)*var(--ratio-general)*var(--ratio-xxl));
+    --ratio-xl: 2.5;
+    --text-xl: calc(var(--text-base-size)*var(--ratio-general)*var(--ratio-xl));
+    --ratio-lg: 2.1;
+    --text-lg: calc(var(--text-base-size)*var(--ratio-general)*var(--ratio-lg));
+    --ratio-md: 1.8;
+    --text-md: calc(var(--text-base-size)*var(--ratio-general)*var(--ratio-md));
+    --ratio-sm: 1.5;
+    --text-md: calc(var(--text-base-size)*var(--ratio-general)*var(--ratio-sm));
+    --ratio-xs: 1.3;
+    --text-xs: calc(var(--text-base-size)*var(--ratio-general)*var(--ratio-xs));
+    --ratio-xxs: 1;
+    --text-xxs: calc(var(--text-base-size)*var(--ratio-general)*var(--ratio-xxs));
+
+    /* //////////////////////////////////////////////////// */
+    /* COLORES */
+    /* //////////////////////////////////////////////////// */
+    --fuente-default: "Ubuntu", sans-serif;
+    --color-header: #ff8a65;
+    --color-searchbar: #ffab91;
+    --color-fondo: #edebdd;
+    --color-cards: #e7e5e2da;
+    --color-blanco: #ffffff;
+    --border-default: solid;
+    --border-width: 1px;
+    --color-celeste-claro: #b1e7e1;
+    --color-celeste-oscuro: #50a8b8;
+    --color-card-libro: #78a4b3;
+    --color-card-libro-gradiente: #5d8999;
+    --color-hover-amigos: hsl(16, 85%, 80%);
+    --color-hover-acciones: 0 0 0.75rem rgb(0, 0, 0);
+    --shadow-color: 14deg 42% 48%;
+    --shadow-elevation-high: 0.2px 0.2px 0.3px hsl(var(--shadow-color) / 0.45),
+        0.6px 0.6px 0.8px -0.4px hsl(var(--shadow-color) / 0.43),
+        1.2px 1.2px 1.7px -0.8px hsl(var(--shadow-color) / 0.41),
+        1.9px 1.9px 2.7px -1.1px hsl(var(--shadow-color) / 0.38),
+        3px 3px 4.2px -1.5px hsl(var(--shadow-color) / 0.36),
+        4.6px 4.6px 6.4px -1.9px hsl(var(--shadow-color) / 0.33),
+        6.9px 6.8px 9.6px -2.3px hsl(var(--shadow-color) / 0.31),
+        10px 9.9px 13.9px -2.6px hsl(var(--shadow-color) / 0.29),
+        14.1px 14px 19.7px -3px hsl(var(--shadow-color) / 0.26),
+        19.4px 19.2px 27px -3.4px hsl(var(--shadow-color) / 0.24);
+    --height-header: 7rem;
+
+    --perfilUsuario-default: 4rem;
+    --books-default: 1.5rem;
+
+    --color-save: rgb(120, 178, 104);
+    --color-save-gradient: rgb(97, 134, 87);
+
+    --color-cancel: rgb(190, 70, 70);
+
+    --borde-default: 1rem;
+
+    /* //////////////////////////////////////////////////// */
+    /* VARIABLES PARA CLASES DE UTILIDAD(PADDINGS, MARGINS, GAPS, ETC) */
+    /* //////////////////////////////////////////////////// */
+    --space-unit: 1em;
+    --space-xs: calc(0.5 * var(--space-unit));
+    --space-sm: calc(0.75 * var(--space-unit));
+    --space-md: calc(1.25 * var(--space-unit));
+    --space-lg: calc(2 * var(--space-unit));
+    --space-xl: calc(3.25 * var(--space-unit));
+
+    /* //////////////////////////////////////////////////// */
+    /* VARIABLES PARA IMAGENES*/
+    /* //////////////////////////////////////////////////// */
+    --image-small: 5rem;
+}
+
+
+.gap-xs {
+    gap: var(--space-xs);
+}
+
+.gap-sm {
+    gap: var(--space-sm);
+}
+
+.gap-md {
+    gap: var(--space-md);
+}
+
+.gap-lg {
+    gap: var(--space-lg);
+}
+
+.gap-xl {
+    gap: var(--space-xl);
+}
+
+.column-gap-xs {
+    column-gap: var(--space-xs);
+}
+
+.column-gap-sm {
+    column-gap: var(--space-sm);
+}
+
+.column-gap-md {
+    column-gap: var(--space-md);
+}
+
+.column-gap-lg {
+    column-gap: var(--space-lg);
+}
+
+.column-gap-xl {
+    column-gap: var(--space-xl);
+}
+
+.row-gap-xs {
+    row-gap: var(--space-xs);
+}
+
+.row-gap-sm {
+    row-gap: var(--space-sm);
+}
+
+.row-gap-md {
+    row-gap: var(--space-md);
+}
+
+.row-gap-lg {
+    row-gap: var(--space-lg);
+}
+
+.row-gap-xl {
+    row-gap: var(--space-xl);
+}
+
+
+h1,
+.text-xxl {
+    font-size: var(--text-xxl, 2.074em);
+}
+
+h2,
+.text-xl {
+    font-size: var(--text-xl, 1.728em);
+}
+
+h3,
+.text-lg {
+    font-size: var(--text-lg, 1.44em);
+}
+
+h4,
+.text-md {
+    font-size: var(--text-md, 1.2em);
+}
+
+p,
+.text-base {
+    font-size: var(--text-base-size);
+}
+
+small,
+.text-sm {
+    font-size: var(--text-sm, 0.833em);
+}
+
+.text-xs {
+    font-size: var(--text-xs, 0.694em);
+}
+
+.normal-font {
+    font-weight: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: var(--text-base-size);
+}
+
+
+body {
+    font-size: var(--text-base-size);
+    background: var(--color-fondo);
+    font-family: var(--fuente-default);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+hr {
+    height: 0;
+}
+
+
+/* llevar a componentes */
+img {
+    width: var(--image-small);
+    height: var(--image-small);
+    border-radius: 50%;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.grid {
+    display: grid;
+}
+
+.grid-fullColumn {
+    grid-column: 1/-1;
+}
+
+.margin-xs {
+    margin: var(--space-xs);
+}
+
+.margin-sm {
+    margin: var(--space-sm);
+}
+
+.margin-md {
+    margin: var(--space-md);
+}
+
+.margin-lg {
+    margin: var(--space-lg);
+}
+
+.margin-xl {
+    margin: var(--space-xl);
+}
+
+.padding-xs {
+    padding: var(--space-xs);
+}
+
+.padding-sm {
+    padding: var(--space-sm);
+}
+
+.padding-md {
+    padding: var(--space-md);
+}
+
+.padding-lg {
+    padding: var(--space-lg);
+}
+
+.padding-xl {
+    padding: var(--space-xl);
+}
+
+.centered-items {
+    justify-items: center;
+    align-items: center;
+}
+
+.centered-child {
+    justify-content: center;
+    align-items: center;
+}
+
+.centered-self {
+    place-self: center;
+}
+
+.justificado-cuadrado {
+    text-align: justify;
+}
+
+.border {
+    border-bottom: 2px solid grey;
+}

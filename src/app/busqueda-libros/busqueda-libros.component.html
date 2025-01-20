@@ -1,0 +1,9 @@
+<app-nav (newFilterEvent)="addFilter($event)"></app-nav>
+
+<div>
+<app-container-books>
+  <ng-container *ngFor="let book of books">
+    <app-libro [book]="book"></app-libro>
+  </ng-container>
+</app-container-books>
+</div>

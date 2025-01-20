@@ -1,0 +1,18 @@
+<section class = "opcionSeleccionada__recomendacion">
+        <h2>Recommendations to value</h2>
+        @if (this.checkEmptyRecommendationsResponse()) {
+            <div class="message__container">
+                <p class="message__phrase">
+                    Usted no tiene recomendaciones agregadas a valorar. Puede agregar en la pantalla Home. Click para ir a Home<a (click)="this.nvgtService.goTo('home')" class="message__link"> haciendo click aqui</a>.
+                </p>
+            </div>
+        }
+        <div class="recommendations__container">
+            @for (recomendation of recommendations; track recomendation){
+                <app-recomendacion [recomendacion]="recomendation" [attr.data-testid]="'id_'+recomendation.id" ></app-recomendacion>
+            }
+        </div>
+        <section class = "buttonsFooter">
+        <app-btn-guardar-cancelar></app-btn-guardar-cancelar >
+        </section>
+</section>

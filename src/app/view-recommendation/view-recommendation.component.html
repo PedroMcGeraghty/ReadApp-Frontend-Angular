@@ -1,0 +1,67 @@
+<main class="contenedor_edicion_recomendacion">
+    
+    <h2 *ngIf="puedeCrear">Create Recommendation!</h2>
+
+    <div *ngIf="!puedeEditar && !puedeCrear" class="contenedorTitulo">
+        <h1>{{recomendacion.title}}</h1>
+        <img *ngIf="recomendacion._public" src="svg/privada.svg" alt="" >
+        <img *ngIf="!recomendacion._public" src="svg/publica.svg" alt="" >
+    </div>
+    
+    <div *ngIf="puedeEditar || puedeCrear" class="contenedorTitulo">
+        <input class="input-titulo" type="text" value={{recomendacion.title}} [(ngModel)]="recomendacion.title" placeholder="  Titulo de la recomendacion"/>
+        <label class ="contenedorTitulo__label">
+          <input type="checkbox" [(ngModel)]="recomendacion._public">
+          <h5>Private visibility</h5>
+        </label>
+    </div>
+ 
+    <h2 *ngIf="puedeEditar || puedeCrear">You can remove books from the recommendation!</h2>
+    <app-container-books>
+        @for (book of recomendacion.recommendedBooks; track book){
+            <app-libro [book]="book" (enviarLibro)="sacarLibro($event)"></app-libro>
+        }
+    </app-container-books>
+    
+    <h2 *ngIf="puedeEditar || puedeCrear">You can add recommended books!</h2>
+    <app-container-books *ngIf="puedeEditar || puedeCrear">
+        @for (book of librosQuePuedoAgregar; track book){
+            <app-libro [book]="book" [puedeAgregar]="puedeAgregar" (enviarLibro)="agregarLibro($event)"></app-libro>
+            }
+    </app-container-books>
+
+
+    <div *ngIf="!puedeEditar && !puedeCrear" class="resenia">
+        <h2>Review</h2>
+        <p class="descripcion">
+            {{recomendacion.description}}
+        </p>
+        <hr>
+    </div>
+    
+    <div *ngIf="puedeEditar || puedeCrear" class="resenia">
+        <h2>Review</h2>
+        <textarea class="descripcion" 
+            [(ngModel)]="recomendacion.description"  
+            value={{recomendacion.description}}>
+        </textarea>
+        <hr>
+    </div>
+
+    <app-valoracion 
+        *ngIf="!puedeEditar && !puedeCrear"
+        [valoraciones]="recomendacion.valorations"
+        [score]="recomendacion.valoracionTotal"
+        [puedeValorar]="!puedeEditar && !recomendacion.puedeValorar"
+        [id]="recomendacion.id">
+    </app-valoracion>
+
+    <app-btn-guardar-cancelar 
+        *ngIf="puedeEditar || puedeCrear"
+        (guardar)="createOrEdit()"
+        (cancelar)="cancelar()">
+    </app-btn-guardar-cancelar>
+
+    <app-volver-atras *ngIf="!puedeEditar && !puedeCrear" class="boton-volver"></app-volver-atras>
+    
+</main>

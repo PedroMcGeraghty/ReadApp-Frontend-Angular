@@ -1,0 +1,104 @@
+article{
+    max-width: 38rem;
+    height: 20rem;
+    border-radius: var(--borde-default);
+    display: grid;
+    gap: var(--space-xs);
+    padding: var(--space-md);
+    
+    &:hover{
+        box-shadow: var(--shadow-elevation-high);
+    }
+}
+
+.libro__acciones{
+    grid-area: acciones;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 2rem;
+
+    & button{
+        height: 3.5rem;
+        width: 3.5rem;
+        border-radius: 50%;
+        cursor: pointer;
+        align-self: center;
+        justify-self: center;
+        border: none;
+        box-shadow: 2px 2px 2px rgb(110, 107, 107); 
+
+        & svg{
+                align-self: center;
+                justify-self: center;
+                height: 2.5rem;
+                width: 2.5rem;
+            }
+
+        &:hover{
+            filter: brightness(140%);
+            transform: scale(1.1);
+        }
+    }
+}
+
+.libro {
+    grid-template-areas:
+    "portada descripcion acciones";
+    grid-template-columns: 0.1fr 1.5fr 0.1fr;
+    height: auto;
+    background: linear-gradient(to bottom, var(--color-card-libro), var(--color-card-libro-gradiente));
+    transition: 0.25s;
+}
+
+.libro__portada{
+    width: 10rem;
+    height: 18rem;
+    max-height: 85%;
+    grid-area: portada;
+    border-radius: 1rem;
+    margin: auto;
+}
+
+.libro__contenido{
+    grid-area: descripcion;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding: var(--space-sm);
+    border-radius: 1rem;
+    /* overflow: hidden; */
+    
+    & .libro__autor{
+        margin-bottom: 0.2rem;
+        font-size: var(--text-sm);
+    }
+    .libro__info{
+        & .dato{
+            display: flex;
+            flex-direction: row; 
+            flex-wrap: wrap;
+            /* justify-items: left; */
+            align-items: center;
+            gap: var(--space-xs);
+            margin: var(--space-xs);
+            & p {
+            font-size:var(--text-xs) ;
+
+        }
+            & svg{
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+        }
+    }
+}
+
+.delete {
+    background: linear-gradient(to bottom, var(--color-cancel-gradient), var(--color-cancel));
+}
+
+.agregar {
+    background: linear-gradient(to bottom, var(--color-save-gradient), var(--color-save-gradient-dark));
+}
+

@@ -1,0 +1,50 @@
+article{
+    width: 100%;
+    height: 100%;
+    border-radius: var(--borde-default);
+}
+.libro {
+    grid-template-areas:
+    "portada descripcion acciones";
+    grid-template-columns: 0.1fr 1.5fr 0.1fr;
+
+    background: linear-gradient(to bottom, var(--color-card-libro), var(--color-card-libro-gradiente));
+    transition: 0.25s;
+}
+img.libro__portada{
+    width: 10rem;
+    height: 100%;
+    grid-area: portada;
+    border-radius: 0;
+}
+
+.libro__contenido{
+    grid-area: descripcion;
+
+    overflow: hidden;
+    
+    & .libro__autor{
+        margin-bottom: 0.2rem;
+        font-size: var(--text-sm);
+    }
+    & .libro__info{
+        & .dato{
+            & svg{
+                width: var(--text-xs);
+                height: var(--text-xs);
+            }
+        }
+    }
+}
+
+.libro__acciones{
+    grid-area: acciones;
+    justify-content: space-around;
+
+    & .accion{
+        cursor: pointer;
+        &:hover{
+            filter: drop-shadow(var(--color-hover-acciones));
+        }
+    }
+}

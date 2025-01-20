@@ -1,0 +1,19 @@
+<aside>
+    <div class="imagen">
+      <img class="foto" src={{myInfo.fotoPath}} />
+      <div class="nombre">
+        <h2>{{userService.nombreUsuario + ' ' + userService.apellidoUsuario}}</h2>
+        <hr />
+      </div>
+    </div>
+  
+    <div class="opciones">
+      <div *ngFor="let option of options" class="option__container" 
+          [routerLink]="['/my-profile', option.path]" 
+          (click)="goTo(option)">
+        <img src="svg/{{option.iconPath}}" alt="" />
+        <h4 [style.color]="option.textColor">{{option.label}}</h4>
+      </div>
+    </div>
+  </aside>
+  

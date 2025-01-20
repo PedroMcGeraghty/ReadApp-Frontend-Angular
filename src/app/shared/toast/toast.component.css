@@ -1,0 +1,65 @@
+#toast {
+  padding: 16px;
+  background-color: #333;
+  color: white;
+  border-radius: 4px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  max-height: fit-content;
+  font-size: large;
+}
+
+#toast.show{
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+#toast.success {
+  background-color: #4caf50;
+}
+
+
+#toast.error {
+  background-color: #f44336;
+}
+
+#toast.info {
+  background-color: #2196f3;
+}
+
+#toast.warning {
+  background-color: #ff9800;
+}
+
+button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+@-webkit-keyframes fadein {
+  from {top: 0; opacity: 0;}
+  to {top: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {top: 0; opacity: 0;}
+  to {top: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {top: 30px; opacity: 1;}
+  to {top: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {top: 30px; opacity: 1;}
+  to {top: 0; opacity: 0;}
+}

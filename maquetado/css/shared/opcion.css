@@ -1,0 +1,28 @@
+.opcion{
+    border-radius: 0.5rem;
+    background-color: var(--color-header);
+    cursor: pointer;
+    & h4{
+        text-align: center;
+    }
+}
+
+/* ////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////// */
+/* .opcion--dropdown TRABAJA ASI */
+/*
+                <a href="/html/perfilUsuario_info.html" class="opcion opcion--perfilUsuario">
+                    <i class="ph ph-info-bold"></i>
+                    <p>Informacion</p>
+                </a>
+*/
+.opcion--dropdown{
+    width: 100%;
+    justify-content: center;
+
+    & svg{
+        /* OCULTA EL ICONO, DEJA EL */
+        display: none;
+    }
+}

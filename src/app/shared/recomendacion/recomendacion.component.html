@@ -1,0 +1,60 @@
+<article class="recomendacion">
+
+    <h2 class="recomendacion__titulo">
+        {{recomendacion.title}}
+    </h2>
+
+    <div class="actions">
+
+        @if (!recomendacion.pending) {
+            <button class = "value" (click)="addToValueLater()"> 
+                <img src="svg/corazon.svg" alt="">
+            </button>
+        }
+        @if (recomendacion.editable) {
+            <button class = "edit" [routerLink]="['/view-recommendation/edit/',recomendacion.id]"> 
+                <img src="svg/edit.svg" alt="">
+            </button>
+        }
+        @if (recomendacion.deletable) {
+            <button class = "delete" (click)="deleteRecommendation()" [attr.data-testid]="'delete_' + recomendacion.id">
+                <img src="svg/delete.svg" alt="">
+            </button>
+        }
+
+    </div>
+
+    <p class="recomendacion__descripcion">
+        {{recomendacion.content}}
+    </p>
+
+    <div class="recomendacion__libros">
+        <!-- FALTA LOGICA PARA UN CARTEL QUE DIGA "N LIBROS MAS" -->
+        @for(title of recomendacion.bookTitles; track title){
+            <div class="libro-recomendado">
+                <img src="svg/recommendedBook.svg" alt="">
+                <p>{{title}}</p>
+            </div> 
+        }
+    </div>
+
+    <div class="recomendacion__datos">
+
+        <div class="datoIcons">
+            <img src="svg/recommendationScore.svg" alt="">
+            <p>{{recomendacion.popularity}}</p>
+        </div>
+
+        <div class="datoIcons">
+            <img src="svg/book2.svg" alt="">
+            <p>{{recomendacion.cantidadLibros}} Libros</p>
+        </div>
+
+        <div class="datoIcons">
+            <img src="svg/sandClock.svg" alt="">
+            <p>{{round(recomendacion.aproxTime/60)}}h</p>
+        </div>
+    </div>
+    
+    <a class="btn__verMas " [routerLink]="['/view-recommendation/detalle/',recomendacion.id]" appButtonHoverPressed>Ver Mas>></a>
+</article>

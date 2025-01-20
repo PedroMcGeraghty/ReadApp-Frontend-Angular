@@ -1,0 +1,39 @@
+/* Este archivo se lee en orden de la siguiente manera: */
+    /* 1 - DIMENSIONES CONTENEDOR   */
+    /* 2 - POSICIONAMIENTO          */
+    /* 3 - DISTRIBUCION ELEMENTOS   */
+    /* 4 - ESTILOS                  */
+
+    /*  */
+.opcionSeleccionada{
+    width: 100%;
+
+    border: 1px solid rgb(168, 167, 167);
+    border-radius: 2rem;
+}
+
+.opcionSeleccionada__contenido{
+    height: 100%;
+
+    overflow-y: scroll;
+}
+
+.opcionSeleccionada__amigos{
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 0.8fr));
+    grid-auto-rows: minmax(auto, 6rem);
+
+    justify-content: center;
+}
+
+.opcionSeleccionada__libros{
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 30rem), 0.8fr));
+    grid-auto-rows: 20rem;
+    
+    justify-content: center;
+}
+
+.opcionSeleccionada__recomendaciones{
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 25rem), 1fr));
+    grid-auto-rows: 30rem;
+    justify-items: center;
+}

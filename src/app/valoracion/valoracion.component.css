@@ -1,0 +1,84 @@
+.valoraciones {
+    margin:0 0 7rem;
+    align-items: center;
+}
+
+.puntuacion{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin: 1rem;
+}
+
+.valoraciones__individuales {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    div {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); 
+        gap: 1rem;
+        width: 70%;
+    }
+}
+.agregar {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-header);
+    color: white;
+    border: none;
+    padding: 2rem;
+    height: 5rem;
+    box-shadow: 1px 2px 4px rgb(24, 23, 23);
+    border-radius: 10%;
+}
+
+
+.nuevaValoracion{
+    margin: 5rem 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    align-items: center;
+}
+
+
+.descripcion{
+    display: inline;
+    width: 100%;
+    height: 15rem;
+    font-size: 1.8rem;
+    text-align: start;
+    margin: 2rem 0 1.5rem;
+  }
+
+.contenedor {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 1rem;
+}
+
+.starRating{
+    text-align: center;
+    width:  5rem;
+    border-radius: 4rem;
+    place-items: center;
+    margin: 1rem;
+}
+
+.estrellas {
+    width: 3rem;
+    height: auto;
+    color: grey; 
+    cursor: pointer;
+    transition: color 0.2 ease-in-out;
+    
+    &.rated {
+        color: yellow; 
+    }
+  }
+

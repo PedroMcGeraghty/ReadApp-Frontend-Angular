@@ -1,0 +1,36 @@
+.botones-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--space-lg);
+    height: fit-content;
+    background-color: var(--color-fondo);
+
+    & button {
+        height: 5rem;
+        width: 7rem;
+        border-radius: 10rem;
+        cursor: pointer;
+        border: none;
+    }
+}
+
+.btn-cancelar {
+    background-color: grey;
+    transition: background-color 0.3s ease, filter 0.3s ease, color 0.3s ease;
+
+    &:hover {
+        background-color: var(--color-cancel);
+        filter: brightness(120%);
+    }
+}
+
+.btn-guardar {
+    background: linear-gradient(to bottom, var(--color-save), var(--color-save-gradient));
+    filter: drop-shadow(0 0 0.75rem rgb(78, 76, 77));
+    transition: filter 0.3s ease;
+
+    &:hover {
+        filter: brightness(140%);
+    }
+}

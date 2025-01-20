@@ -1,0 +1,131 @@
+.btn {
+  height: 4.5rem;
+  padding: 0 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-secundario {
+  font-size: var(--text-md);
+  border: 1px solid var(--color-cancel);
+  background-color: var(--color-fondo);
+  filter: brightness(90%);
+  
+
+  &:hover {
+    color: aliceblue;
+    background-color: var(--color-cancel);
+    filter: brightness(100%);
+  }
+}
+
+
+.btn-principal {
+  font-size: var(--text-md);
+  background: linear-gradient(to bottom, var(--color-save),var(--color-save-gradient));
+  filter: drop-shadow(0 0 0.75rem rgb(78, 76, 77));
+
+  &:hover {
+    filter: brightness(140%);
+  }
+}
+
+.btn__background--signIn {
+  background-color: var(--color-celeste-oscuro);
+
+  color: white;
+  font-size: var(--text-md);
+
+  &:hover {
+    filter: brightness(140%);
+    opacity: 0.8;
+    color: black;
+    font-weight: bold;
+  }
+}
+.btn__background--createAccount {
+  background-color: var(--color-save);
+  color: white;
+  font-size: var(--text-md);
+
+  &:hover {
+    filter: brightness(140%);
+    opacity: 0.8;
+    color: black;
+    font-weight: bold;
+  }
+}
+.centered-inlineGrid {
+  display: inline-grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.justified__content {
+  justify-content: center;
+}
+
+.btn__verMas {
+  /* padding: 0.5rem var(--text-xxs); */
+  width: 100%;
+  text-align: center;
+}
+
+.btn__3d {
+  width: 100%;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.5rem;
+  background: #80ed99;
+  box-shadow: 0 5px #57cc99;
+}
+.btn__3d--green:hover {
+  box-shadow: 0 3px #57cc99;
+  top: 1px;
+}
+.btn__3d--green:active {
+  box-shadow: 0 0 #57cc99;
+  top: 5px;
+}
+
+.botonalineado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-fondo);
+}
+
+.agregar {
+  background-color: var(--color-header);
+  color: white;
+  border: none;
+  padding: 5px;
+  height: 5rem;
+  width: 5rem;
+  box-shadow: 1px 2px 4px rgb(24, 23, 23);
+  border-radius: 50%;
+}
+
+.botones-container {
+  height: var(--height-header);
+  width: 100%;
+  background-color: var(--color-fondo);
+  justify-content: center;
+  align-content: center;
+}
+
+@media screen and (max-width: 400px) {
+  .botones-container {
+    margin-bottom: var(--height-header);
+    justify-content: center;
+  }
+}
+

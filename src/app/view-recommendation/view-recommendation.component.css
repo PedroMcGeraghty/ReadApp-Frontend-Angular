@@ -1,0 +1,73 @@
+.contenedor_edicion_recomendacion{
+    width: 70%;
+    margin: 0 auto 10rem;
+    img{
+      width: 5rem;
+    }
+}
+
+h2{
+  margin: 1rem 0;
+}
+
+.busquedaLibros{
+  /* UNICO */
+  grid-template-columns: repeat(auto-fill,minmax(min(100%, 30rem),0.6fr));
+  grid-auto-rows: minmax(auto, 20rem);
+  
+  /* COMPARTIDO CON LAYOUT CARDS */
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  gap: 2rem;
+  margin: 3rem auto 8rem;
+}
+ 
+.resenia{
+  width: 100%;
+  font-size: 3rem;
+  margin:2rem 0 6rem;
+}
+    
+.descripcion {
+  width: 100%;
+  height: auto;
+  font-size: 1.8rem;
+  text-align: start;
+  margin: 2rem 0 4rem;
+}
+
+.contenedorTitulo{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    justify-content: space-between;
+      
+    & svg{
+         position: absolute;
+        right: 0;
+        cursor: pointer;
+        fill: blue;
+      }
+    }
+  
+.input-titulo {
+    width: 55vw;
+    height: 3rem;
+    outline: none;
+    border-radius: 1rem;
+  }
+
+.contenedorTitulo__label{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.boton-volver{
+  padding: 5rem;
+  text-align: start;
+}

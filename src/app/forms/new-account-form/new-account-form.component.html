@@ -1,0 +1,45 @@
+<form [formGroup]="form" class="form__inputs">
+
+    <div class="campo">
+        <input type="text" id={{formLabels.email}} name={{formLabels.email}} formControlName={{formLabels.email}}>
+        <label for={{formLabels.email}}>Email</label>
+        <div class="input__required" *ngIf="warning(formLabels.email)">
+            <span *ngIf="this.form.controls[formLabels.email].errors?.['required']">* Required</span>
+            <span *ngIf="this.form.controls[formLabels.email].errors?.['email']">email&commat;hotmail, email&commat;gmail ...</span>
+        </div>
+    </div>
+
+    <div class="campo">
+        <input type="text" id={{formLabels.username}} name={{formLabels.username}} formControlName={{formLabels.username}}>
+        <label for={{formLabels.username}}>Username</label>
+        <div class="input__required" *ngIf="warning(formLabels.username)">
+            <span *ngIf="this.form.controls[formLabels.username].errors?.['required']">* Required</span>
+            <span *ngIf="this.form.controls[formLabels.username].errors?.['maxlength']">* Max {{this.formRestrictions.USERNAME_MAX}} characters</span>
+            <span *ngIf="this.form.controls[formLabels.username].errors?.['pattern']">* Solo mayusculas, minusculas y/o numeros</span>
+        </div>
+    </div>
+
+    <div class="campo">
+        <input type='password' id={{formLabels.password}} name={{formLabels.password}} formControlName={{formLabels.password}}>
+        <label for={{formLabels.password}}>Password</label>
+        <div class="input__required" *ngIf="warning(formLabels.password)">
+            <span *ngIf="this.form.controls[formLabels.password].errors?.['required']">* Required</span>
+            <span *ngIf="this.form.controls[formLabels.password].errors?.['maxlength']">* Max {{this.formRestrictions.PASSWORD_MAX}} characters</span>
+        </div>
+    </div>
+
+    <div class="campo">
+        <input type="text" id={{formLabels.name}} name={{formLabels.name}} formControlName={{formLabels.name}}>
+        <label for={{formLabels.name}}>Name</label>
+        <div class="input__required" *ngIf="warning(formLabels.name)">
+            <span *ngIf="this.form.controls[formLabels.name].errors?.['required']">* Required</span>
+        </div>
+    </div>
+    <div class="actions">
+        <button (click)="request()" [disabled]="!this.form.valid" [attr.data-testid]="'createAccount'" [ngClass]="{'valid': form.valid, 'invalid': !form.valid}" [appBgColor]="'--color-complementary-3-bright'" [colorByVariableName]=true>
+            <img src="svg/sign-in.svg" alt="">
+            <p>Create account</p>
+        </button>
+    </div>
+    
+</form>

@@ -1,0 +1,159 @@
+/* EFFECTOS DE SOMBREADOS, ANIMACIONES ,ETC */
+
+/* INPUT. Trabaja con .input_label--effect(padre) > (input, label)(hijos)*/
+div.input__label--effect{
+    & input {
+        border-radius: 1rem;
+        border-color: var(--color-fondo);
+        outline: none;
+    }
+
+    & label {
+        text-transform: uppercase;
+        pointer-events: none;
+        transition: 0.25s;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: var(--text-xs);
+        font-weight: normal;
+        position: absolute;
+        left: 1rem;
+        top: 28%;
+    }
+
+    &   input:focus {
+        border-color: var(--color-searchbar);
+        border-radius: 1rem;
+    }
+
+    /* SI el input es focuseado, o tambien si es valido. SE aplican los estilos al proximo label dentro del mismo container */
+    &   input:focus ~ label,
+        input:valid ~ label{
+            transform: translateY(-2rem);
+            font-size: 1em;
+            background-color: var(--color-searchbar);
+            border: 1px solid;
+            border-radius: 1rem;
+            border-color: var(--color-searchbar);
+            filter: brightness(110%);
+        }
+}
+/* INPUT radio . Trabaja con label.radiobox-input(padre) > input(hijo)*/
+label.radiobox-input, label.checkbox-input{
+    gap: 2rem;
+    background-color: var(--color-celeste-claro);
+    filter: brightness(95%);
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: background 0.1s;
+
+    &:has(> input:checked){
+        background-color: var(--color-celeste-oscuro);
+        color: whitesmoke;
+        filter: brightness(100%);
+        filter: drop-shadow(1px 2px 4px rgb(24, 23, 23));
+    }
+}
+
+input:invalid {
+    border:1px solid red;
+}
+
+.hover-boxshadow{
+    &:hover{
+        box-shadow: var(--shadow-elevation-high);
+    }
+}
+
+.hover-delete{
+    &:hover{
+        border-radius: calc(var(--borde-default)/2);
+        background-color: var(--color-cancel);
+    }
+}
+
+.hover-click:active{
+ box-shadow: 0 0 2px darkslategray;
+ transform: translateY(2px);
+}
+
+.scrollbar::-webkit-scrollbar {
+    width: 0.8rem; 
+    margin-left: 1rem;
+}
+  
+.scrollbar::-webkit-scrollbar-track {
+    background-color: var(--color-fondo);
+}
+  
+.scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--color-header);
+    border-radius: 2rem;  
+}
+
+
+/* EFFECTO EN EL BORDE */
+
+.borde--iluminado{
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+/* Borde animado */
+.borde--iluminado::before {
+    content: "";
+    position: absolute;
+    inset: -10rem;
+    background-image: conic-gradient(var(--color-header) 20deg, transparent 60deg);
+    animation: rotate 8s linear infinite;
+    z-index: -1;
+}
+
+/* Fondo del formulario */
+.borde--iluminado::after {
+    content: "";
+    position: absolute;
+    inset: 1.5rem;
+    background: inherit; /* usa el fondo del formulario */
+    z-index: -1; 
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/* HOVER PARA OPCIONES */
+.opcion__effect--hover{
+    transition: 0.25s;
+    &:hover{
+        box-shadow: var(--shadow-elevation-high);
+
+    }
+}
+
+.effect-shadow-hover {
+    &:hover {
+        text-shadow: 2px 2px 7px black;
+    }
+}
+
+/* LETRA NEGRITA SI ESTA SELECCIONADA */
+.opcion--seleccionada{
+    
+    & h4 {
+        filter: drop-shadow(1px 2px 4px rgb(133, 125, 125));
+    }
+
+}
+
+.no--seleccionado {
+    &:hover{
+        text-shadow: 0.1rem 0.2rem 0.4rem var(--color-searchbar);
+    }
+
+}

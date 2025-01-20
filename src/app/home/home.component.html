@@ -1,0 +1,37 @@
+<app-nav (newFilterEvent)="addFilter($event)"></app-nav>
+
+<main class="recomendattions__container" [attr.data-testid]="'main'">
+    @switch (true) {
+        @case (this.flagsEmptyRecommendation['allRecommendations']) {
+            <div class="message__container">
+                <p class="message__phrase">
+                    No se encontraron recomendaciones para su perfil de usuario. Pruebe cambiando su el Criterio de busqueda de su perfil<a (click)="this.nvgtService.goTo('my-profile/information')" class="message_link"> haciendo click aqui</a>.
+                </p>
+            </div>
+        }
+        @case (this.flagsEmptyRecommendation['userRecommendations']) {
+            <div class="message__container">
+                <p class="message__phrase">
+                    Usted no posee recomendaciones publicas/privadas, pruebe creando una haciendo click en el boton + o click aqui.
+                </p>
+            </div>
+            
+        }
+        @case (this.flagsEmptyRecommendation['filterRecommendations']) {
+            <div class="message__container">
+                <p class="message__phrase">
+                    No se encontraron recomendaciones con esas caracteristicas. Pruebe buscando por titulo de recomendacion o titulo de libro.
+                </p>
+            </div>
+
+        }
+    }
+
+    @for (recomendation of recommendations; track recomendation.id){
+        @if(recomendation._public){
+             <app-recomendacion [recomendacion]="recomendation" [attr.data-testid]="'id_'+recomendation.id"></app-recomendacion>
+        }
+    }
+    <app-boton-agregar class = "absolutePosition" [view]="'view-recommendation'" [tipo]="'crear'"></app-boton-agregar>
+</main>
+

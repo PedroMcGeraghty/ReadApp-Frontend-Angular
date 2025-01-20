@@ -1,0 +1,95 @@
+<section class = "opcionSeleccionada">        
+        <h2>Informacion</h2>
+        <div class="opcionSeleccionada__info">
+
+            <div class="info">
+                <h3>General</h3>
+
+
+                <form class="formulario-general" [formGroup]="perfilForm">
+                    <div class= "campo input__label--effect">
+                        <input type="text" formControlName="nombre" placeholder="nombre" data-testid="test-form">
+                        <label>nombre</label>
+                        <app-form-error *ngIf="(errorMessage(perfilForm, 'nombre', 'pattern'))" [errorMessage]="errorMessage(perfilForm, 'nombre', 'pattern')" data-testid="test-error"></app-form-error>
+                    </div>
+                    
+                    
+
+                    <div class= "campo input__label--effect">
+                        <input type="text" formControlName="apellido" placeholder="apellido">
+                        <label>apellido</label>
+                        <app-form-error *ngIf="(errorMessage(perfilForm, 'apellido', 'pattern'))" [errorMessage]="errorMessage(perfilForm, 'apellido', 'pattern')"></app-form-error>
+                    </div>
+                    
+
+                    <div class= "campo input__label--effect">
+                        <input type="text" formControlName="username" placeholder="username">
+                        <label>username</label>
+                        <app-form-error *ngIf="(errorMessage(perfilForm, 'username', 'pattern'))" [errorMessage]="errorMessage(perfilForm, 'username', 'pattern')"></app-form-error>
+                    </div>
+                    
+
+                    
+                    <div class= "campo input__label--effect">
+                        <input type="date" formControlName="fecha de nacimiento" placeholder="fecha de nacimiento">
+                        <label>fecha de nacimiento</label>
+                        <app-form-error *ngIf="(errorMessage(perfilForm, 'fecha de nacimiento', 'date validator'))" [errorMessage]="errorMessage(perfilForm, 'fecha de nacimiento', 'date validator')"></app-form-error>
+                    </div>
+                    
+
+                    <div class= "campo input__label--effect">
+                        <input type="email" formControlName="email" placeholder="email">
+                        <label>email</label>
+                        <app-form-error *ngIf="(errorMessage(perfilForm, 'email', 'email'))" [errorMessage]="errorMessage(perfilForm, 'email', 'email')"></app-form-error>
+                    </div>
+
+                    <div class= "campo input__label--effect">
+                        <input type="number"  placeholder="Tiempo de lectura promedio" readonly value="{{tiempoDeLectura}}">
+                        <label>TIEMPO DE LECTURA PROMEDIO</label>
+                    </div>
+                    
+                </form>
+            </div>
+
+            <hr>
+
+            <div class="info">
+                <h3>Forma de lectura</h3>
+                <div class="formulario-lectura">
+                    @for (forma of formasDeLectura; track $index) {
+                        <app-input-box inputType="radio" name="radio__input" [label]="forma" [isChecked]="estaEn(forma,userLectura)" (change) = "modificarLectura(forma,userLectura)"></app-input-box>
+                    }
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="info">
+                <h3>Criterio de búsqueda</h3>
+                <form class="formulario-criterio" [formGroup]="calculadorForm">
+                    @for (criterio of criteriosBusqueda; track $index) {
+                        <app-input-box inputType="checkbox" [label]="criterio" [isChecked]="estaEn(criterio,userBusqueda)" (change)="modificarBusqueda(criterio,userBusqueda)"></app-input-box>
+                    }
+                    <app-input-box inputType="checkbox" label="Calculador" (change)="mostrar(); modificarBusqueda('Calculador',userBusqueda)" [isChecked]="estaEn('Calculador',userBusqueda)" data-testid="checkboc-calculador"></app-input-box>
+                    <div class="nuevosInputs" *ngIf="mostrarBoton" data-testid="form-min-max">
+                        <div class= "campo input__label--effect">
+                            <input type="number" formControlName="numero min">
+                            <label>MIN</label>
+                        </div>
+                        <div class= "campo input__label--effect">
+                            <input type="number" formControlName="numero max">
+                            <label>MAX</label>
+                        </div>
+                        <app-form-error *ngIf="(errorMessage(calculadorForm, 'numero max', 'minmax'))" [errorMessage]="(errorMessage(calculadorForm, 'numero max', 'minmax'))"></app-form-error>
+                    </div>
+                    
+                </form>
+                <app-form-error *ngIf="!hayCriterioBusqueda()" [errorMessage]="'Debe seleccionar al menos un criterio'"></app-form-error>
+            </div>
+            
+            
+        </div>
+        <section class = "buttonsFooter">
+        <app-btn-guardar-cancelar (guardar)="guardar()" (cancelar)="cancelar()"></app-btn-guardar-cancelar >
+        </section>  
+</section>          

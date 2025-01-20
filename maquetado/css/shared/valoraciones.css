@@ -1,0 +1,15 @@
+.valoraciones {
+  align-items: center;
+  margin-bottom: var(--height-header);
+}
+
+
+.perfil-valoracion{
+  grid-template-columns: 5.5rem 10rem;
+  grid-template-rows: auto;
+  justify-content: center;
+}
+
+.valoraciones__individuales{
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+}
