@@ -5,12 +5,15 @@ Trabajo practico de la Facultad para la materia de Algoritmos III , el cual cons
 # Casos de uso
 
 La aplicación debe cuenta con una pantalla de autenticación de usuario. 
+
 ![image](https://github.com/user-attachments/assets/54cbd3ab-b5e4-4584-a09e-c0f00df5b98d)
 
 Una vez validado el mismo seingresa en la página de búsqueda de recomendaciones donde además de ver las mismas (acorde a su perfil), se puede realizar una búsqueda de las mismas.
+
 ![image](https://github.com/user-attachments/assets/2ef4db54-d5a1-4f8a-886d-21b2b7939738)
 
 Al Hacer clic/tap en la card de la recomendación permite ir al detalle de la misma. En esta sección, además de ver un detalle más amplio, se puede agregar una valoración, si corresponde según validaciones del negocio. 
+
 ![image](https://github.com/user-attachments/assets/05c7f0eb-c368-4f2f-93c6-62e3650d985e)
 
 La aplicación cuenta con un menú desplegable superior en el ícono del usuario o hamburger según corresponda. El mismo tiene las opciones de “Búsqueda”, “mis recomendaciones”, “Perfil de usuario” y “logout”.
@@ -30,6 +33,7 @@ En la edición y creación de las recomendaciones al agregar un nuevo libro debe
 ![image](https://github.com/user-attachments/assets/2483753d-c7de-4c50-9ef1-a8f025f3e5c8)
 
 La página de perfil de usuario permite actualizar los datos correspondientes de la persona que se encuentra logueada en la aplicación, así como también agregar/quitar amigos, recomendaciones a valorar, libros a leer y/o leídos.
+
 ![image](https://github.com/user-attachments/assets/3b5d11cb-42b5-4e1d-ac22-06e77161c0cb)
 
 # Service
