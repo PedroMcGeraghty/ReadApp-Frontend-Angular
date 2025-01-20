@@ -39,7 +39,7 @@ La aplicacion cuenta con services que nos permiten conectarnos a servidores exte
 
 # Manejo de Errores
 
-La aplicación tambien cuenta con manejo de errores, trayendo el mismo error desde el backend y atrapandolo en el componente con el try catch y mostrandolo en pantalla a traves de un toast.
+La aplicación tambien cuenta con manejo de errores, trayendo el mismo error desde el backend con su status correspondiente y atrapandolo en el componente con el try catch y mostrandolo en pantalla a traves de un toast.
 
 ![image](https://github.com/user-attachments/assets/369da2bd-e877-4f96-80f9-4f1823f4f617)
 ![image](https://github.com/user-attachments/assets/d551d116-0119-42e2-a5c5-598bd6c3dd1d)
