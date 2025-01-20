@@ -4,7 +4,7 @@ Trabajo practico de la Facultad para la materia de Algoritmos III , el cual cons
 
 # Casos de uso
 
-La aplicación debe cuenta con una pantalla de autenticación de usuario. 
+La aplicación cuenta con una pantalla de autenticación de usuario. 
 
 ![image](https://github.com/user-attachments/assets/54cbd3ab-b5e4-4584-a09e-c0f00df5b98d)
 
