@@ -14,9 +14,11 @@ Al Hacer clic/tap en la card de la recomendación permite ir al detalle de la mi
 ![image](https://github.com/user-attachments/assets/05c7f0eb-c368-4f2f-93c6-62e3650d985e)
 
 La aplicación cuenta con un menú desplegable superior en el ícono del usuario o hamburger según corresponda. El mismo tiene las opciones de “Búsqueda”, “mis recomendaciones”, “Perfil de usuario” y “logout”.
+
 ![image](https://github.com/user-attachments/assets/4bb27a03-ff7e-4900-8bb1-b446cacadf8e)
 
 Otra opción de búsqueda que se puede seleccionar es la vista de “Mis Recomendaciones”. En este caso podemos mostrar solo las recomendaciones creadas por el usuario logueado, permitiendo realizar la búsqueda y aplicar un filtro de solo privadas. 
+
 ![image](https://github.com/user-attachments/assets/4c5a2844-a439-4a19-b35d-6f887825c66a)
 ![image](https://github.com/user-attachments/assets/c7649218-fc2e-486d-9fb9-4f1bb87925c8)
 
@@ -37,7 +39,8 @@ La aplicacion cuenta con services que nos permiten conectarnos a servidores exte
 
 # Manejo de Errores
 
-La aplicación tambien cuenta con manejo de errores, trayendo el mismo error desde el backend y atrapandolo en el componente con el try catch y mostrandolo en pantalla a traves de un toast
+La aplicación tambien cuenta con manejo de errores, trayendo el mismo error desde el backend y atrapandolo en el componente con el try catch y mostrandolo en pantalla a traves de un toast.
+
 ![image](https://github.com/user-attachments/assets/369da2bd-e877-4f96-80f9-4f1823f4f617)
 ![image](https://github.com/user-attachments/assets/d551d116-0119-42e2-a5c5-598bd6c3dd1d)
 
