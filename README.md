@@ -2,7 +2,7 @@
 
 Trabajo practico de la Facultad para la materia de Algoritmos III , el cual consiste en una Aplicación web de libros Readapp. La misma esta desarrollada con Angular 18 y Typescript.
 
-# Casos de uso
+## Casos de uso
 
 La aplicación cuenta con una pantalla de autenticación de usuario. 
 
@@ -36,12 +36,12 @@ La página de perfil de usuario permite actualizar los datos correspondientes de
 
 ![image](https://github.com/user-attachments/assets/3b5d11cb-42b5-4e1d-ac22-06e77161c0cb)
 
-# Service
+## Service
 
 La aplicacion cuenta con services que nos permiten conectarnos a servidores externos.
 ![image](https://github.com/user-attachments/assets/7e6b31bd-897f-4fb3-875d-a1587da5c335)
 
-# Manejo de Errores
+## Manejo de Errores
 
 La aplicación tambien cuenta con manejo de errores, trayendo el mismo error desde el backend con su status correspondiente y atrapandolo en el componente con el try catch y mostrandolo en pantalla a traves de un toast.
 
